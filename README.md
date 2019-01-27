@@ -16,6 +16,18 @@ One may generate un agent key to represent him at a limited degree, which shall 
 
 Agent keys are located in `/agent_keys`. Their filenames are in the form of `{Sequential|Hex-4}_{Fingerprint|Hex-8}`.
 
+### Instance Keys
+
+Instance keys are used as identifiers of sessions.
+
+Pour exemple, if I keep 3 active sessions with Twitter and 2 active sessions with Linode on my computer, I would have 5 instance keys.
+
+### Device Keys
+
+Device keys are only used to securely transfer keys across devices.
+
+One device key should only be used once.
+
 ## Information Structure
 
 ### Replacement Chain
