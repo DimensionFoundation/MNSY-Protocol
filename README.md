@@ -48,7 +48,7 @@ Bob shall recognize any digital signature from all agent keys of Alice, besides 
 
 ## The Name
 
-MNSY is the initialism of my name `Neruthes` and the names of core contributors, namely, `Mindey`, `Suji Yan`, and `Yisi Liu`, as sorted in Unicode sequential order.
+MNSY is the *.
 
 ## Disclaimer
 
