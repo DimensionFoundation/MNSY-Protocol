@@ -48,7 +48,7 @@ Bob shall recognize any digital signature from all agent keys of Alice, besides 
 
 ## The Name
 
-MNSY is the *.
+MNSY is the ████ and ████.
 
 ## Disclaimer
 
