@@ -16,4 +16,12 @@ X-Agent-Key-Fingerprint: 6806 1AF0 C181 3884 EF11 B50A 2AFD C3A9 095E D892
 
 X-Instance-Key-Fingerprint: F860 C9AA 47D6 FCE3 1670 849B 8401 625A 0D86 EF89
 
+X-Application-ID: 2708d651-7ad6-489c-a634-e2d57df21121
+
+Application-Access-Level: 25
+
+Application-User-Id: 18728374567
+
+Application-Device-Session-Id: 0d79d73e-d4f0-408a-b12b-2246221d2ad8
+
 XXXXXXX-END-MNSY-MESSAGE-PAYLOAD-CLEAR-XXXXXXX

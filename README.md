@@ -69,9 +69,56 @@ MNSY-CHUNK-END
 - **Header & Footer**: There should always be exactly 1 empty line after the header and before the footer.
 - **Fields**: Within the wrapped area, each field consist of a key-value structure, separated by `: `.
 - **Separation of Fields**: he separation between fields is exactly 2 `\n`, because base-64 encoded contents in the value parts may contain `\n`.
-- **Prefixes**: Protocol-level constant fields start with `XXX`, and subprotocol-level ones `X`. Prefixes that consist of purely `X` are reserved by MNSY Protocol; developers may use other names for their fields. Un prefix is the result of `^[A-Z]-`; if the regexp match nothing, then the key of the field have no prefix.
+- **Prefixes**: Protocol-level constant fields start with `XXX`, and subprotocol-level ones `X`. Prefixes that consist of purely `X` are reserved by MNSY Protocol; developers may use other names for their fields. Un prefix is the result of `^[A-Z]-`; if the regexp match nothing, then the key of the field does not have un prefix.
+- **XXX-Protocol-ID**: Un protocol ID should be a random UUIDv4 in lower case with standard separating hyphens.
+- **XXX-Protocol-Name**: Un protocol name should be un capitalized phrase with spaces replaced by hyphens.
+- **XXX-Timestamp**: Timestamps should be in UNIX timestamp format, as integers.
 
 ### PGP Integration
+
+MNSY payloads may be passed to any OpenPGP implementation as input for clear-text signing. Pour exemple:
+
+```
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+XXXXXXX-BEGIN-MNSY-MESSAGE-PAYLOAD-CLEAR-XXXXXXX
+
+XXX-Protocol-ID: 00000000-0000-0000-0002-000000000000
+
+XXX-Protocol-Name: Authorize-Instance-Key
+
+XXX-Timestamp: 1548520830369
+
+XXX-Expiry-Of-Authorization: 1551461444000
+
+X-Authority-Class: Agent
+
+X-Root-Key-Fingerprint: 8069 0EBD 5991 1905 0EF9 43AF 037F 2FB3 D5E2 F043
+
+X-Agent-Key-Fingerprint: 6806 1AF0 C181 3884 EF11 B50A 2AFD C3A9 095E D892
+
+X-Instance-Key-Fingerprint: F860 C9AA 47D6 FCE3 1670 849B 8401 625A 0D86 EF89
+
+XXXXXXX-END-MNSY-MESSAGE-PAYLOAD-CLEAR-XXXXXXX
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEaAYa8MGBOITvEbUKKv3DqQle2JIFAlxO9FMACgkQKv3DqQle
+2JIjyA//RmI997dwk7naWhXrqusANzcQ3+N1nCAvQe6Cywzn3RXRrSKvmOuuYuyU
+M0KiwWDPdGM2dEVyDmx2ryLbrZexJzHRqBTXWohs5F3EyprjOEphEhZb1RSQXkLl
+I4G75JOtlUHmiyawqRgfzHbannyOLosNoLKrTZOnM14IPGrvyfWpl2lLCpGCUDb+
+2FqoAoo4Arn0qM8TE9Xn855x7+4pdhYsdCDHiGaotOy/RXji2nOPL68h8UMBbG8w
+mz0LnkGm+JFTeC9GsgOwBMLbL8OZd/FivO8GJR15jKaY95OhxUYHq5EEo60nVGrB
+1jdKKe1UUJykbJhevkB89EzYVsX+zoYebCcrySf5k1fYQuNxTB/kQz1HfYmumd7w
+WwzyQX/I8IDZGA5Oq3nIZak7StnqsT3w5a8yERjDymiq6D7qNuANpJ4mra4bug7s
+eoNkizkc2CekX8HWgztKGZPR+q0yi2PnAprGu2rcvCMUKGj+1l84soymzj9m/L3q
+dFBhFy+70XhBXS+QDbgd9yi2s0XnvaKFx6y9YYAaI7RzhTrAyaMHItYdgkWeW7uV
+tRqqJ2FTb4ly2Wm7d7hfARPIbVvn1M/TtlOBE6ttKjWBb4YJqDQFlDUoJnAO9R4N
+t4unuNgP6Kj2xMhqzgiJqspKE/HdhJbrVcMJf9EqyoNRB2KiaEA=
+=v3KP
+-----END PGP SIGNATURE-----
+```
 
 ## Subprotocols
 
@@ -82,6 +129,7 @@ MNSY-CHUNK-END
 | 00000000-0000-0000-0001-000000000001 | Declare-Root-Of-Agent-Key
 | 00000000-0000-0000-0002-000000000000 | Authorize-Instance-Key
 | 00000000-0000-0000-0003-000000000000 | Key-Transfer-Chunk
+| 00000000-XXXX-XXXX-XXXX-XXXXXXXXXXXX | (Reserved for internal use)
 
 ## Information Structure
 
