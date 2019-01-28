@@ -28,6 +28,61 @@ Device keys are only used to securely transfer keys across devices.
 
 One device key should only be used once.
 
+## Payload Specification
+
+### Regular Payload
+
+Regular payloads start and end in the form of:
+
+```
+XXXXXXX-BEGIN-MNSY-MESSAGE-PAYLOAD-CLEAR-XXXXXXX
+
+XXX-Protocol-ID: 00000000-0000-0000-0000-000000000000
+
+XXX-Protocol-Name: Root-Key-Replacement
+
+XXX-Timestamp: 1547896547173
+
+...
+
+XXXXXXX-END-MNSY-MESSAGE-PAYLOAD-CLEAR-XXXXXXX
+```
+
+### Compact Payload
+
+Compact payloads start and end in the form of:
+
+```
+MNSY-CHUNK-BEGIN
+
+00000000-0000-0000-0003-000000000000 Key-Transfer-Chunk
+
+...
+
+MNSY-CHUNK-END
+```
+
+`XXX-Protocol-ID` and `XXX-Protocol-Name` are flattened without their keys explicitly given.
+
+### Fields
+
+- **Header & Footer**: There should always be exactly 1 empty line after the header and before the footer.
+- **Fields**: Within the wrapped area, each field consist of a key-value structure, separated by `: `.
+- **Separation of Fields**: he separation between fields is exactly 2 `\n`, because base-64 encoded contents in the value parts may contain `\n`.
+- **Prefixes**: Protocol-level constant fields start with `XXX`, and subprotocol-level ones `X`. Prefixes that consist of purely `X` are reserved by MNSY Protocol; developers may use other names for their fields. Un prefix is the result of `^[A-Z]-`; if the regexp match nothing, then the key of the field have no prefix.
+
+### PGP Integration
+
+## Subprotocols
+
+| XXX-Protocol-ID                      | XXX-Protocol-Name
+| ------------------------------------ | -----------------
+| 00000000-0000-0000-0000-000000000000 | Root-Key-Replacement
+| 00000000-0000-0000-0001-000000000000 | Create-Agent-For-Root-Key
+| 00000000-0000-0000-0001-000000000001 | Declare-Root-Of-Agent-Key
+| 00000000-0000-0000-0002-000000000000 | Authorize-Instance-Key
+| 00000000-0000-0000-0003-000000000000 | Key-Transfer-Chunk
+
 ## Information Structure
 
 ### Replacement Chain
@@ -60,10 +115,10 @@ Bob shall recognize any digital signature from all agent keys of Alice, besides 
 
 ## The Name
 
-MNSY is the ████ and ████.
+MNSY is ████████████ of ████████████████, namely, ███████████████████████████, █████████.
 
 ## Disclaimer
 
-I do not grant, explicitly or implicitly, any person or organization any authorization, at any degree, to further develop upon this protocol. I reserve, solely and fully, any right, if applicable, unless otherwise explicitly granted with consent, both written and digitally-signed, to any party.
+I do not grant, explicitly or implicitly, any person or organization, any authorization, at any degree, to further develop upon this protocol. I reserve, solely and fully, any right, if applicable, unless otherwise explicitly granted with consent, both written and digitally-signed, to any party.
 
-I, in person or in corporation, may claim exclusive intellectual property rights of this protocol and/or any system thereof developed.
+I, in person or in corporation, may claim exclusive intellectual property rights of this protocol and/or any system thereof developed upon it.
