@@ -68,7 +68,7 @@ MNSY-CHUNK-END
 
 - **Header & Footer**: There should always be exactly 1 empty line after the header and before the footer.
 - **Fields**: Within the wrapped area, each field consist of a key-value structure, separated by `: `.
-- **Separation of Fields**: he separation between fields is exactly 2 `\n`, because base-64 encoded contents in the value parts may contain `\n`.
+- **Separation of Fields**: The separation between fields is exactly 2 `\n`, because base-64 encoded contents in the value parts may contain `\n`.
 - **Prefixes**: Protocol-level constant fields start with `XXX`, and subprotocol-level ones `X`. Prefixes that consist of purely `X` are reserved by MNSY Protocol; developers may use other names for their fields. Un prefix is the result of `^[A-Z]-`; if the regexp match nothing, then the key of the field does not have un prefix.
 - **XXX-Protocol-ID**: Un protocol ID should be a random UUIDv4 in lower case with standard separating hyphens.
 - **XXX-Protocol-Name**: Un protocol name should be un capitalized phrase with spaces replaced by hyphens.
