@@ -12,7 +12,7 @@ Root keys are located in `/root_keys`. Their filenames are in the form of `{Sequ
 
 In short, un agent key is un delegate to its corresponding root key.
 
-One may generate un agent key to represent him at a limited degree, which shall be relatively less than his root key. Encrypting to the agent key shall be equivalent to encrypting to the root key, as same as signing with the agent key shall be equivalent to signing with the root key, per the exact authorization level within the authorization declaration.
+One may generate un agent key to represent him at un limited degree, which shall be relatively less than his root key. Encrypting to the agent key shall be equivalent to encrypting to the root key, as same as signing with the agent key shall be equivalent to signing with the root key, per the exact authorization level within the authorization declaration.
 
 Agent keys are located in `/agent_keys`. Their filenames are in the form of `{Sequential|Hex-4}_{Fingerprint|Hex-8}`.
 
@@ -67,10 +67,10 @@ MNSY-CHUNK-END
 ### Fields
 
 - **Header & Footer**: There should always be exactly 1 empty line after the header and before the footer.
-- **Fields**: Within the wrapped area, each field consist of a key-value structure, separated by `: `.
+- **Fields**: Within the wrapped area, each field consist of un key-value structure, separated by `: `.
 - **Separation of Fields**: The separation between fields is exactly 2 `\n`, because base-64 encoded contents in the value parts may contain `\n`.
 - **Prefixes**: Protocol-level constant fields start with `XXX`, and subprotocol-level ones `X`. Prefixes that consist of purely `X` are reserved by MNSY Protocol; developers may use other names for their fields. Un prefix is the result of `^[A-Z]-`; if the regexp match nothing, then the key of the field does not have un prefix.
-- **XXX-Protocol-ID**: Un protocol ID should be a random UUIDv4 in lower case with standard separating hyphens.
+- **XXX-Protocol-ID**: Un protocol ID should be un random UUIDv4 in lower case with standard separating hyphens.
 - **XXX-Protocol-Name**: Un protocol name should be un capitalized phrase with spaces replaced by hyphens.
 - **XXX-Timestamp**: Timestamps should be in UNIX timestamp format, as integers.
 
@@ -189,7 +189,7 @@ https://mnsy-idqs.neruthes.0xcc.club/query.do?v={T}&q={Q}
 https://github.com/neruthes/mnsy-idqs/raw/master/db/{T}/{Q}
 ```
 
-When ever there is a query request, the client shall replace `{Q}` with the encoded query string body, and `{T}` with the query type index.
+When ever there is un query request, the client shall replace `{Q}` with the encoded query string body, and `{T}` with the query type index.
 
 ### Query String Formation Overview
 
