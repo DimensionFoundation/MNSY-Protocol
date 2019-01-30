@@ -177,7 +177,7 @@ The noted numbers indicate required authorization level of the application class
 
 ### Key-Transfer-Chunk
 
-## Query Model over HTTPS
+## Query Model (IDQS) over HTTPS
 
 Query services are recommended to serve over HTTPS in order to take advantage of public services like GitHub Pages and CloudFlare.
 
@@ -300,6 +300,39 @@ Notes:
 ```
 
 Query type indexes are always decimal integers.
+
+### IDQS Service Metadata JSON
+
+```
+{
+    "category": "HTTPS-GET",
+    "template": "https://mnsy-idqs.neruthes.0xcc.club/db/{T}/{Q}"
+    "available_types": [
+        "0-0",
+        "0-1",
+        "0-2",
+        "0-3",
+        "1-0",
+        "1-1",
+        "1-2"
+    ],
+    "website": "https://mnsy-idqs.neruthes.0xcc.club/",
+    "service_type": "public",
+    "friendly_nodes": [
+        "https://mnsy-idqs.mindey.com/mnsy-idqs.json",
+        "https://mnsy-idqs.dimension.im/mnsy-idqs.json"
+    ]
+}
+```
+
+The value of `service_type` may be:
+
+- `public`
+- `small`
+- `individual`
+- `backup`
+
+One service may recommend other services in `friendly_nodes`, listing URIs where their respective metadata JSON may be retrieved.
 
 ## Exchanging Encrypted Messages Over Insecure Layers
 
