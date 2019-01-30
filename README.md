@@ -166,16 +166,16 @@ When ever there is a query request, the client shall replace `{Q}` with the enco
 
 | Type  | Query String                         | Result Format
 | ----- | ------------------------------------ | ------------------------------------
-| 0-0   | {Fingerprint|hex-40}                 | Public key
-| 0-1   | {Fingerprint|hex-40}-cadr            | Create-Agent & Declare-Root
-| 0-2   | {Fingerprint|hex-40}-ca              | Create-Agent
-| 0-3   | {Fingerprint|hex-40}-dr              | Declare-Root
-| 1-0   | {Fingerprint|hex-40}-meta            | Public key metadata
-| 1-1   | {Fingerprint|hex-40}-chains          | Related replacement chains
-| 1-2   | chain-{SHA256|hex}                   | Replacement chain
+| 0-0   | {Fingerprint\|hex-40}                | Public key
+| 0-1   | {Fingerprint\|hex-40}-cadr           | Create-Agent & Declare-Root
+| 0-2   | {Fingerprint\|hex-40}-ca             | Create-Agent
+| 0-3   | {Fingerprint\|hex-40}-dr             | Declare-Root
+| 1-0   | {Fingerprint\|hex-40}-meta           | Public key metadata
+| 1-1   | {Fingerprint\|hex-40}-chains         | Related replacement chains
+| 1-2   | chain-{SHA256\|hex}                  | Replacement chain
 | 2-0   | {Email Address}(-[R,A])?             | Matching fingerprints
 | 2-0   | {Name}(-[R,A])?                      | Matching fingerprints
-| 2-0   | {Fingerprint|hex-8~39}(-[R,A])?      | Matching fingerprints
+| 2-0   | {Fingerprint\|hex-8~39}(-[R,A])?     | Matching fingerprints
 
 Notes:
 
