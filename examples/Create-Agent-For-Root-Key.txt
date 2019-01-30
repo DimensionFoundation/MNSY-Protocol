@@ -6,9 +6,21 @@ XXX-Protocol-Name: Create-Agent-For-Root-Key
 
 XXX-Timestamp: 1547900450304
 
+XXX-Expiry: 1597900450304
+
 X-Root-Key-Fingerprint: 8069 0EBD 5991 1905 0EF9 43AF 037F 2FB3 D5E2 F043
 
 X-Agent-Key-Fingerprint: 6806 1AF0 C181 3884 EF11 B50A 2AFD C3A9 095E D892
+
+X-Restriction-Mode: 0-Traditional
+
+X-Restriction-Class: 0
+
+X-Delegation-Restriction-Allowed-Application-Classes: Message-Decrypt
+File-Sign
+
+X-Delegation-Restriction-Prohibited-Application-Classes: Message-Sign
+X-AuthorizeInstaneKey
 
 X-Agent-Key-Pub-Encoding-Method: Base64--GnuPG
 
