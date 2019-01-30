@@ -1,6 +1,6 @@
 # Understanding MNSY Keyring Protocol
 
-## Categories of Keys
+## Classes of Keys
 
 ### Root Keys
 
@@ -141,6 +141,35 @@ gtjYHJMbPOneGrrUgBAs2ZXJldxDvyrwUuuLRfSwkKSY3BN7oDM=
 ### Root-Key-Replacement
 
 ### Create-Agent-For-Root-Key
+
+#### X-Restriction-Mode
+
+- `0-Traditional`: The only possible value for now. Made for extensibility.
+
+#### X-Restriction-Class
+
+- `0`: Almost allow every usage.
+- `99`: Almost prohibit every usage.
+
+Can be any integer in the range from 0 to 99.
+
+#### X-Allowed-Application-Classes
+
+List of application classes allowed.
+
+#### X-Prohibited-Application-Classes
+
+List of application classes prohibited.
+
+#### Note: Application Classes
+
+- `Message-Sign (0)`: Recognize signatures from this key as mine, for messages like Email, IRC, and XMPP.
+- `Message-Decrypt (1)`: Add this agent key to recipients automatically, for messages like Email, IRC, and XMPP.
+- `File-Sign` (0): Recognize signatures from this key as mine, for files.
+- `File-Decrypt (1)`: Add this agent key to recipients automatically, for files.
+- `X-Authorize-Instance-Key (1)`:
+
+The noted numbers indicate required authorization level of the application classes. Unless otherwise specified in `X-Allowed-Application-Classes`, applications whose required authorization level is lower than the `X-Restriction-Class` given above may not accept this agent key as proper delegate.
 
 ### Declare-Root-Of-Agent-Key
 

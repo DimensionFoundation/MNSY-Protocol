@@ -16,11 +16,11 @@ X-Restriction-Mode: 0-Traditional
 
 X-Restriction-Class: 0
 
-X-Delegation-Restriction-Allowed-Application-Classes: Message-Decrypt
+X-Allowed-Application-Classes: Message-Decrypt
 File-Sign
 
-X-Delegation-Restriction-Prohibited-Application-Classes: Message-Sign
-X-AuthorizeInstaneKey
+X-Prohibited-Application-Classes: Message-Sign
+X-Authorize-Instance-Key
 
 X-Agent-Key-Pub-Encoding-Method: Base64--GnuPG
 
