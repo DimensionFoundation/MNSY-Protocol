@@ -181,6 +181,7 @@ Notes:
 
 - All inputs shall be interpreted case-insensitively.
 - `[R,A]`: Must choose one between R (Root) and A (Agent) to specify role in the hierarchy.
+- `(...)?`: This part can be omitted.
 
 ### Public key metadata
 
